@@ -1,0 +1,309 @@
+/* Style pour le conteneur du header */
+.all {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    position: relative;
+  }
+  
+  /* Bouton hamburger à gauche */
+  .nav-toggle {
+    display: none; /* Caché sur les grands écrans */
+    background: none;
+    border: none;
+    font-size: 2em;
+    cursor: pointer;
+  }
+  
+  .nav-links2 {
+    text-decoration: none;
+    list-style: none;
+  
+    display: flex;
+    gap: 20px;
+    align-items: center;
+  }
+  
+  @media (min-width: 768px) {
+    .burger {
+      display: none;
+    }
+    .burger input {
+      display: none;
+    }
+  }
+  
+  .logo a {
+    font-size: 24px;
+    text-decoration: none;
+  }
+  
+  /* Panier à droite */
+  .nav-panier {
+    position: absolute;
+    right: 20px;
+  }
+  
+  /* Style par défaut de la barre de navigation */
+  .nav-links {
+    display: none;  /* Menu caché */
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 10px;
+    left: 0;
+    width: 200px;
+    height: auto;  /* Adapter la hauteur au contenu */
+    background-color: var(--menu-bg-color);
+    padding-left: 10px;
+    z-index: 999;  
+  }
+  
+  /* Afficher le menu quand il est actif */
+  .nav-active {
+    display: flex;  /* Affiche le menu sous le hamburger */
+  }
+  
+  .nav-links li {
+    margin-left: 20px;
+  }
+  
+  .nav-links2 {
+    text-decoration: none;
+    display: flex;
+    flex-direction: row;
+    background-color: var(--menu-bg-color);
+  }
+  
+  /* Switch réduit */
+  .switch-container {
+    transform: scale(0.4); /* Diminue la taille à 40% */
+    transform-origin: center;
+  }
+  
+  a {
+    text-decoration: none;
+    color: var(--menu-bg-color);
+  }
+  ul {
+    list-style: none;
+  
+  }
+  
+  burger {
+    display: none;
+  }
+  
+  /* Responsive: Styles pour les petits écrans */
+  @media screen and (max-width: 768px) {
+    .nav-toggle {
+      display: block; /* Afficher le bouton hamburger */
+      position: absolute;
+    }
+  
+    /* Logo au centre */
+  .logo {
+    flex-grow: 1;
+    text-align: center;
+  }
+  
+  .nav-links2 {
+    display: none;
+  }
+  
+    .nav-container {
+      justify-content: center; /* Centrer le logo */
+    }
+  
+    /* Cacher les liens de navigation par défaut sur mobile */
+    .nav-links {
+      position: absolute;
+      top: 40px;
+      right: 0;
+      width: 200px;
+      height: 300px;
+      background-color: var(--menu-bg-color);
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      transform: translateX(100%); /* Cacher par défaut */
+    }
+  
+    /* Activer le menu mobile */
+    .nav-links.nav-active {
+      transform: translateX(0);
+    }
+  
+    .nav-panier {
+      right: 20px; /* Toujours à droite */
+    }
+  
+    .nav-links li {
+      margin: 20px 0;
+    }
+    a {
+      text-decoration: none;
+      color: rgb(96, 96, 239);
+    }
+    ul {
+      list-style: none;
+  
+    }
+  
+    /* S'assure que le menu change de couleur avec le thème */
+  .dark {
+    --menu-bg-color: #333;  /* Couleur de fond pour le thème sombre */
+  }
+  
+  .light {
+    --menu-bg-color: #f0f0f0;  /* Couleur de fond pour le thème clair */
+  }
+  
+  .burger {
+    position: relative;
+    width: 40px;
+    height: 30px;
+    background: transparent;
+    cursor: pointer;
+    display: block;
+  }
+  
+  .burger input {
+    display: none;
+  }
+  
+  .burger span {
+    display: block;
+    position: absolute;
+    height: 4px;
+    width: 100%;
+    background: black;
+    border-radius: 9px;
+    opacity: 1;
+    left: 0;
+    transform: rotate(0deg);
+    transition: .25s ease-in-out;
+  }
+  
+  .burger span:nth-of-type(1) {
+    top: 0px;
+    transform-origin: left center;
+  }
+  
+  .burger span:nth-of-type(2) {
+    top: 50%;
+    transform: translateY(-50%);
+    transform-origin: left center;
+  }
+  
+  .burger span:nth-of-type(3) {
+    top: 100%;
+    transform-origin: left center;
+    transform: translateY(-100%);
+  }
+  
+  .burger input:checked ~ span:nth-of-type(1) {
+    transform: rotate(45deg);
+    top: 0px;
+    left: 5px;
+  }
+  
+  .burger input:checked ~ span:nth-of-type(2) {
+    width: 0%;
+    opacity: 0;
+  }
+  
+  .burger input:checked ~ span:nth-of-type(3) {
+    transform: rotate(-45deg);
+    top: 28px;
+    left: 5px;
+  }
+    .wrap {
+       width: 100%; /* Toujours occuper toute la largeur disponible */
+      max-width: 1200px; /* Définir une largeur maximale */
+      margin: 0 auto; /* Centrer le contenu horizontalement */
+      padding: 20px; /* Espacement intérieur */
+    }
+  
+  }
+  
+  /* Thèmes clair et sombre */
+  .light header {
+    background-color: #f0f0f0;
+    color: #333;
+  }
+  
+  .light .logo a, .light .nav-links a {
+    color: #333;
+  }
+  
+  .dark header {
+    background-color: #333;
+    color: white;
+  }
+  
+  .dark .logo a, .dark .nav-links a {
+    color: white;
+  }
+  
+  
+  
+  .btn-cart {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 10px;
+    border: none;
+    background-color: transparent;
+    position: relative;
+  }
+  
+  .btn-cart::after {
+    content: attr(data-quantity);
+    width: fit-content;
+    height: fit-content;
+    position: absolute;
+    font-size: 15px;
+    color: white;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    opacity: 0;
+    visibility: hidden;
+    transition: .2s linear;
+    top: 115%;
+  }
+  
+  .icon-cart {
+    width: 24.38px;
+    height: 30.52px;
+    transition: .2s linear;
+  }
+  
+  .icon-cart path {
+    fill: rgb(240, 8, 8);
+    transition: .2s linear;
+  }
+  
+  .btn-cart:hover > .icon-cart {
+    transform: scale(1.2);
+  }
+  
+  .btn-cart:hover > .icon-cart path {
+    fill: rgb(186, 34, 233);
+  }
+  
+  .btn-cart:hover::after {
+    visibility: visible;
+    opacity: 1;
+    top: 105%;
+  }
+  
+  .quantity {
+    display: none;
+  }
+  
+  
+  

@@ -1,8 +1,9 @@
 import React, { useContext, useEffect } from 'react';
-import { ThemeContext } from './context/ThemeContext.js';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'; // Importer Router, Routes, Route
-import styled, { ThemeProvider as StyledThemeProvider } from 'styled-components';
-import Home from './Pages/Home.js';
+import { ThemeContext } from '../context/ThemeContext';
+import Header from '../components/Header';
+import Carousel from '../components/Carousel';
+import Footer from '../components/Footer';
+import styled, { ThemeProvider } from 'styled-components';
 
 // Définir des thèmes clairs et sombres
 const lightTheme = {
@@ -20,7 +21,8 @@ const themes = {
   dark: darkTheme,
 };
 
-function App() {
+
+function Home() {
   const { theme } = useContext(ThemeContext);
 
   useEffect(() => {
@@ -28,18 +30,13 @@ function App() {
   }, [theme]);
 
   return (
-      <StyledThemeProvider theme={themes[theme]}>
+      <ThemeProvider theme={themes[theme]}>
         <AppWrapper>
-          <Router>
-
-            {/* Définitiom les routes */}
-            <Routes>
-              <Route path="/" element={<Home />} /> {/* Accueil */}
-            </Routes>
-
-          </Router>
+          <Header />
+          <Carousel />
+          <Footer />
         </AppWrapper>
-      </StyledThemeProvider>
+      </ThemeProvider>
   );
 }
 
@@ -49,4 +46,5 @@ const AppWrapper = styled.div`
   min-height: 100vh;
 `;
 
-export default App;
+
+export default Home;
