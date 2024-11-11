@@ -1,8 +1,13 @@
 import React, { useContext, useEffect } from 'react';
-import { ThemeContext } from './context/ThemeContext.js';
+import { ThemeContext } from './context/ThemeContext';
+import { CartProvider } from './context/CartContext';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'; // Importer Router, Routes, Route
 import styled, { ThemeProvider as StyledThemeProvider } from 'styled-components';
 import Home from './Pages/Home.js';
+import ProductCard from './components/Productcard.js';
+import Header from './components/Header.js';
+import Footer from './components/Footer.js';
+import Cart from './Pages/Cart.js';
 
 // Définir des thèmes clairs et sombres
 const lightTheme = {
@@ -28,18 +33,24 @@ function App() {
   }, [theme]);
 
   return (
+    <CartProvider> {/* Envelopper toute l'application avec CartProvider */}
       <StyledThemeProvider theme={themes[theme]}>
         <AppWrapper>
           <Router>
+            <Header />
 
-            {/* Définitiom les routes */}
+            {/* Définir les routes */}
             <Routes>
               <Route path="/" element={<Home />} /> {/* Accueil */}
+              <Route path="/Productcard/:id" element={<ProductCard />} /> 
+              <Route path="/Cart" element={<Cart />} />
             </Routes>
 
+            <Footer />
           </Router>
         </AppWrapper>
       </StyledThemeProvider>
+    </CartProvider>
   );
 }
 

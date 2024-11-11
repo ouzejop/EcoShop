@@ -4,9 +4,9 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "./Carousel.css";
 
-import image1 from '../Assets/image1.jpg';
-import image2 from '../Assets/image2.jpg';
-import image3 from '../Assets/image3.jpg';
+import image1 from '../Assets/image1.jpeg';
+import image2 from '../Assets/image2.jpeg';
+import image3 from '../Assets/image3.jpeg';
 
 const Carousel = () => {
   const settings = {
@@ -17,6 +17,8 @@ const Carousel = () => {
     slidesToScroll: 1,
     centerMode: true,
     centerPadding: '0',
+    autoplay: true,           // Active le défilement automatique
+    autoplaySpeed: 5000,
     nextArrow: <button className="slick-next">→</button>,
     prevArrow: <button className="slick-prev">←</button>,
     
@@ -38,25 +40,21 @@ const Carousel = () => {
     { 
       src: image1, 
       alt: 'Image 1', 
-      title: 'EcoShop', 
-      description: 'Votre boutique,<br/> Tous vos produits<br/>bio', 
+      title: '', 
+      description: '', 
       
     },
     { 
       src: image2, 
       alt: 'Image 2', 
       title: '', 
-      description: '',
-      buttonText: '',
-      buttonLink: '#'
+      description: '', 
     },
     { 
       src: image3, 
       alt: 'Image 3', 
       title: '', 
-      description: '',
-      buttonText: '',
-      buttonLink: '#'
+      description: '', 
     },
   ];
 

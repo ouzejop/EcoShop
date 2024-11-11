@@ -1,9 +1,8 @@
 import React, { useContext, useEffect } from 'react';
 import { ThemeContext } from '../context/ThemeContext';
-import Header from '../components/Header';
 import Carousel from '../components/Carousel';
-import Footer from '../components/Footer';
 import styled, { ThemeProvider } from 'styled-components';
+import ProductList from '../components/ProductList';
 
 // Définir des thèmes clairs et sombres
 const lightTheme = {
@@ -32,9 +31,8 @@ function Home() {
   return (
       <ThemeProvider theme={themes[theme]}>
         <AppWrapper>
-          <Header />
           <Carousel />
-          <Footer />
+          <ProductList />
         </AppWrapper>
       </ThemeProvider>
   );

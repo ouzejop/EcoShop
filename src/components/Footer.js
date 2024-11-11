@@ -23,7 +23,7 @@ const Footer = () => {
           </SocialIcon>
         </SocialSection>
       </FooterContent>
-      <Copyright>&copy; 2024 Your Company Name. All rights reserved.</Copyright>
+      <Copyright>&copy; 2024 EcoShop. All rights reserved.</Copyright>
     </FooterWrapper>
   );
 };

@@ -1,0 +1,105 @@
+/* Style principal pour la fenêtre flottante */
+.wrap {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%; /* Réduit la taille globale à 80% de la largeur de l'écran */
+    max-width: 500px;
+    height: 500px;
+    padding: 2em;
+    background-color: var(--menu-bg-color);
+    color: var(--text-color);
+    z-index: 1000;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow-y: auto;
+  }
+  
+  /* Superposition pour l'arrière-plan */
+  .overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.6); /* Arrière-plan semi-transparent */
+    z-index: 999;
+  }
+  
+  /* Style du titre du panier */
+  .heading h1 {
+    font-size: 1.5em;
+    margin-bottom: 1em;
+    text-align: center;
+  }
+  
+  /* Liste d'articles scrollable */
+  .cart {
+    max-height: 300px;
+    overflow-y: auto;
+    padding: 1em;
+  }
+  
+  /* Style du bouton "Continue Shopping" */
+  a.continue {
+    display: block;
+    margin: 1em auto;
+    width: 100%;
+    text-align: center;
+  }
+  
+  /* Alignement du sous-total à droite */
+  .subtotal {
+    text-align: right;
+    margin-top: 1em;
+  }
+  
+  /* Adaptation mobile */
+  @media only screen and (max-width: 600px) {
+    .wrap {
+      width: 100%;
+      height: 500px;
+      padding: 1.5em;
+      max-height: 90vh;
+    }
+  }
+  
+  /* Thèmes clair et sombre */
+  .light .wrap {
+    --menu-bg-color: #fff;
+    --text-color: #333;
+  }
+  
+  .dark .wrap {
+    --menu-bg-color: #333;
+    --text-color: #fff;
+  }
+  
+  
+  .croix {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+  }
+  
+  .croix:hover {
+    color: red;
+  }
+   
+  
+  .imageCart {
+    max-width: 100%;    /* Limite la largeur à 100% de son conteneur parent */
+    max-height: 50px;  /* Limite la hauteur à 200px (modifiable selon votre besoin) */
+    width: auto;        /* Permet à l'image de redimensionner proportionnellement */
+    height: auto;       /* Permet à l'image de conserver son aspect ratio */
+    object-fit: contain; /* Assure que l'image est bien contenue dans ses dimensions */
+    display: block;
+  }
+  
+  
+  

@@ -2,6 +2,7 @@ import React, { useState, useContext } from 'react';
 import './Header.css';
 import { ThemeContext } from '../context/ThemeContext';  
 import Switch from './Switch';  
+import ShoppingCart from './ShoppingCart';
 import { Link } from 'react-router-dom';
 
 function Header() {
@@ -12,6 +13,13 @@ function Header() {
     setIsNavOpen(!isNavOpen);
   };
 
+  // Définit l'état pour contrôler l'affichage du panier
+  const [isCartOpen, setIsCartOpen] = useState(false);
+
+  // Fonction pour afficher ou masquer le panier
+  const toggleCart = () => {
+    setIsCartOpen(!isCartOpen);
+  };
 
   return (
     <header className={theme}>
@@ -31,7 +39,7 @@ function Header() {
         </div>
 
         {/* Panier à droite */}
-        <button odata-quantity="0" className="btn-cart">
+        <button onClick={toggleCart} data-quantity="0" className="btn-cart">
         <svg
           className="icon-cart"
           viewBox="0 0 24.38 30.52"
@@ -40,7 +48,10 @@ function Header() {
           xmlns="http://www.w3.org/2000/
           const toggleNav = () => {
             setIsNavOpen(!isNavOpen);
-          };"
+          };
+        
+          // Définit l'état pour contrôler l'affichage du panier
+          const [isCartOpen, setIsCartOpen] = svg"
         >
           <title>icon-cart</title>
           <path
@@ -51,7 +62,15 @@ function Header() {
         <span className="quantity" />
       </button>
 
-      
+      {/* Superposition de fond */}
+      {isCartOpen && (
+        <>
+          <div className="overlay" onClick={toggleCart}></div>  {/* Clic sur l'overlay ferme le panier */}
+          <div className="wrap">
+            <ShoppingCart toggleCart={toggleCart}/>
+          </div>
+        </>
+      )}
         {/* Menu de navigation */}
         <ul className={`nav-links ${isNavOpen ? 'nav-active' : ''}`}>
           <li><Link to="/">Accueil</Link></li>

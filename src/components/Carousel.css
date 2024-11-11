@@ -2,7 +2,7 @@
     width: 100%; /* Toujours à 60% de la largeur */
     margin: 0 auto; /* Centre le carousel horizontalement */
     position: relative; /* Nécessaire pour les flèches de navigation */
-    height: 450px; /* Ajustez cette hauteur selon vos besoins */
+    max-height:150 px; /* Ajustez cette hauteur selon vos besoins */
   }
   
   .carousel-image-container {
