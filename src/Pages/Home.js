@@ -32,6 +32,7 @@ function Home() {
       <ThemeProvider theme={themes[theme]}>
         <AppWrapper>
           <Carousel />
+          <h1>Nos produits</h1>
           <ProductList />
         </AppWrapper>
       </ThemeProvider>

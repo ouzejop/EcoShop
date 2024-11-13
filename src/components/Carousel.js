@@ -8,54 +8,45 @@ import image1 from '../Assets/image1.jpeg';
 import image2 from '../Assets/image2.jpeg';
 import image3 from '../Assets/image3.jpeg';
 
+// Flèche personnalisée pour le bouton suivant
+const NextArrow = ({ onClick }) => (
+  <button className="slick-next" onClick={onClick}>→</button>
+);
+
+// Flèche personnalisée pour le bouton précédent
+const PrevArrow = ({ onClick }) => (
+  <button className="slick-prev" onClick={onClick}>←</button>
+);
+
 const Carousel = () => {
   const settings = {
     dots: true,
     infinite: true,
     speed: 500,
-    slidesToShow: 1.65,  // Montre 3 images à la fois par défaut
+    slidesToShow: 1.65,
     slidesToScroll: 1,
     centerMode: true,
     centerPadding: '0',
-    autoplay: true,           // Active le défilement automatique
+    autoplay: true,
     autoplaySpeed: 5000,
-    nextArrow: <button className="slick-next">→</button>,
-    prevArrow: <button className="slick-prev">←</button>,
-    
-    // Ajout de la propriété responsive pour les petits écrans
+    nextArrow: <NextArrow />,
+    prevArrow: <PrevArrow />,
     responsive: [
       {
-        breakpoint: 768, // Pour les écrans en dessous de 768px de largeur
+        breakpoint: 768,
         settings: {
-          slidesToShow: 1,  // Afficher une seule image sur les petits écrans
-          centerMode: false, // Désactiver le mode centré sur petits écrans
-          centerPadding: '0', // Aucune marge
+          slidesToShow: 1,
+          centerMode: false,
+          centerPadding: '0',
         }
       }
     ]
   };
-  
 
   const images = [
-    { 
-      src: image1, 
-      alt: 'Image 1', 
-      title: '', 
-      description: '', 
-      
-    },
-    { 
-      src: image2, 
-      alt: 'Image 2', 
-      title: '', 
-      description: '', 
-    },
-    { 
-      src: image3, 
-      alt: 'Image 3', 
-      title: '', 
-      description: '', 
-    },
+    { src: image1, alt: 'Image 1', title: '', description: '' },
+    { src: image2, alt: 'Image 2', title: '', description: '' },
+    { src: image3, alt: 'Image 3', title: '', description: '' },
   ];
 
   return (
@@ -66,11 +57,7 @@ const Carousel = () => {
             <img src={image.src} alt={image.alt} className="carousel-image" />
             <div className="carousel-content">
               <h2 className="carousel-title">{image.title}</h2>
-              <p 
-                className="carousel-description" 
-                dangerouslySetInnerHTML={{ __html: image.description }} 
-              />
-              <a href={image.buttonLink} className="carousel-button">{image.buttonText}</a>
+              <p className="carousel-description" dangerouslySetInnerHTML={{ __html: image.description }} />
             </div>
           </div>
         ))}

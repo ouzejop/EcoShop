@@ -73,3 +73,5 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 ### `npm install react-slick slick-carousel` pour installer carousel slick
 
 ### `npm is=nstall react-router-dom` pour installer react router
+
+### `https://fakestoreapi.com`pour les produits present dans la liste des produits

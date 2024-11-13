@@ -6,13 +6,13 @@ const Form = () => {
     <StyledWrapper>
       <section className="section_form">
         <form action="#" className="feed-form" id="payment-form">
-          <input type="text" placeholder="Nom sur la carte" required />
+          <input id="form1"   type="text" placeholder="Nom sur la carte" required />
 
-          <input type="text" placeholder="Numéro de carte" required />
+          <input id="form2"  type="text" placeholder="Numéro de carte" required />
 
-          <input type="text" placeholder="Date d'expiration (MM/AA)" required />
+          <input id="form3"  type="text" placeholder="Date d'expiration (MM/AA)" required />
 
-          <input type="text" placeholder="Code de sécurité (CVV)" required />
+          <input id="form4"  type="text" placeholder="Code de sécurité (CVV)" required />
 
           <button className="button_submit">Payer</button>
         </form>

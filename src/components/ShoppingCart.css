@@ -5,7 +5,7 @@
     left: 50%;
     transform: translate(-50%, -50%);
     width: 80%; /* Réduit la taille globale à 80% de la largeur de l'écran */
-    max-width: 500px;
+    width: 500px;
     height: 500px;
     padding: 2em;
     background-color: var(--menu-bg-color);

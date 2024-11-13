@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import Card from "./Card"; // Import du composant Card
-import { Link } from "react-router-dom";
+import Loader from "./Loader.js";
 
 const ProductList = () => {
   const [products, setProducts] = useState([]); // Initialiser un état pour stocker les produits
@@ -26,11 +26,30 @@ const ProductList = () => {
 
   // Afficher un message de chargement pendant la récupération des données
   if (loading) {
-    return <p>Chargement des produits...</p>;
+    return (
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          height: "100vh",
+          width: "100vw",
+          position: "fixed",
+          top: 0,
+          left: 0,
+          backgroundColor: "rgba(255, 255, 255, 0.8)", // pour un effet de surimpression
+          zIndex: 1000,
+        }}
+      >
+        <Loader />
+      </div>
+    );
   }
+  
 
   return (
     <StyledGrid>
+      
       {products.map((product) => (
         <Card
           key={product.id}
@@ -58,6 +77,8 @@ const StyledGrid = styled.div`
   @media (max-width: 480px) {
     grid-template-columns: repeat(2, 1fr);
   }
+
+
 
 
 `;

@@ -7,6 +7,7 @@ const Switch = ({ onClick, isChecked }) => {
       <label className="theme-switch">
         <input
           type="checkbox"
+          name="swich"
           className="theme-switch__checkbox"
           onChange={onClick}  // Utilise la prop onClick
           checked={isChecked} // Utilise la prop isChecked pour refléter l'état actuel du thème

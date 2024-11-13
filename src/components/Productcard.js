@@ -2,6 +2,7 @@ import React, { useEffect, useState, useContext } from "react";
 import { useParams } from "react-router-dom";
 import { CartContext } from "../context/CartContext";
 import styled from "styled-components";
+import Loader from "./Loader";
 
 const Productcard = () => {
   const { id } = useParams();
@@ -41,7 +42,27 @@ const Productcard = () => {
     }
   };
 
-  if (loading) return <p>Chargement du produit...</p>;
+  if (loading) {
+    return (
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          height: "100vh",
+          width: "100vw",
+          position: "fixed",
+          top: 0,
+          left: 0,
+          backgroundColor: "rgba(255, 255, 255, 0.8)", // pour un effet de surimpression
+          zIndex: 1000,
+        }}
+      >
+        <Loader />
+      </div>
+    );
+  }
+  
 
   if (!product) return <p>Produit introuvable.</p>;
 

@@ -29,8 +29,6 @@ function ProductCart({ image, title, price, index }) {
       <div className='description'>
         <h3>{truncatedTitle}</h3>
         <p>${totalPrice}</p> {/* Affichage du prix total par quantité */}
-      </div>
-      <div className='nombre'>
         <InputNumber value={quantity} onChange={handleQuantityChange} /> {/* Passage de la quantité */}
       </div>
       <div className='Poubelle'>
