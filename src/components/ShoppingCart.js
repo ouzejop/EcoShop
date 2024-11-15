@@ -4,7 +4,6 @@ import { CartContext } from '../context/CartContext.js';
 import ProductCart from './ProductCart.js';
 import ConfirmCartBoutton from './ConfirmCartBoutton.js';
 import { Link } from 'react-router-dom';
-import Cart from '../Pages/Cart.js';
 
 const ShoppingCart = ({ toggleCart }) => {
   const { cartItems } = useContext(CartContext);

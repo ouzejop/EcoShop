@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import "./InputNumber.css"; // Importer le fichier CSS
 
 function InputNumber({ value, onChange }) {
