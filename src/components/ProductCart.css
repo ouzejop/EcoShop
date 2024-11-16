@@ -1,9 +1,9 @@
 .productCart {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  gap: 10px;
   width: 360px; /* Largeur fixe du conteneur */
-  height: 150px; /* Hauteur fixe du conteneur */
+  height: 100px; /* Hauteur fixe du conteneur */
   padding: 10px;
   box-sizing: border-box;
   margin-bottom: 10px;
