@@ -141,7 +141,7 @@ npm start
 Utilisation
 Pour utiliser l'application, ouvrez votre navigateur et allez à l'adresse :
 
-Copier le code
+
 http://localhost:3000
 Exécution des tests
 Pour exécuter les tests, utilisez la commande suivante :
@@ -154,6 +154,148 @@ Pour créer une version prête pour la production, utilisez :
 
 npm run build
 Structure du projet
+
+React Router (pour la navigation) :
+
+
+
+npm install react-router-dom
+styled-components (pour le style) :
+
+
+
+npm install styled-components
+Carousel Slick (carrousel de produits) :
+
+
+
+npm install react-slick slick-carousel
+FakeStore API (pour les données des produits) : (Aucune commande spécifique, utilise des appels fetch ou axios)
+
+Test des composants (avec Testing Library) :
+
+
+
+npm install --save-dev @testing-library/react @testing-library/jest-dom @testing-library/user-event
+Markdown rendering (optionnel pour description détaillée) :
+
+
+
+npm install react-markdown
+Déploiement (Netlify CLI) :
+
+
+
+npm install -g netlify-cli
+3. Commandes pour le développement
+Démarrer le projet en mode développement :
+
+
+
+npm run dev
+Construire le projet pour la production :
+
+
+
+npm run build
+Prévisualiser la version de production :
+
+
+
+npm run preview
+4. Déploiement
+Déploiement avec Netlify :
+
+
+
+netlify deploy
+Utilisé pour déployer une version statique du projet.
+
+Déploiement avec Vercel :
+
+
+
+vercel deploy
+Déploiement avec GitHub Pages :
+
+Ajouter un package pour le déploiement :
+
+
+npm install gh-pages --save-dev
+Ajouter des scripts dans package.json :
+json
+
+"scripts": {
+  "deploy": "gh-pages -d dist"
+}
+Déployer :
+
+
+npm run build
+npm run deploy
+5. Commandes liées au style et au format
+Linting avec ESLint :
+
+
+
+npm install eslint --save-dev
+npx eslint --init
+Formatage avec Prettier :
+
+
+
+npm install prettier --save-dev
+npx prettier --write .
+6. Commandes pour les tests
+Lancer les tests :
+
+
+
+npm test
+Couverture des tests :
+
+
+
+npm run test:coverage
+7. Gestion des dépendances et maintenance
+Mettre à jour les dépendances :
+
+
+
+npm update
+Vérifier les versions des dépendances :
+
+
+
+npm outdated
+Corriger automatiquement les vulnérabilités :
+
+
+
+npm audit fix
+Résumé rapide des principales commandes utilisées quotidiennement :
+Démarrage du projet :
+
+
+npm run dev
+Ajout d'une bibliothèque :
+
+
+npm install <library-name>
+Build pour la production :
+
+
+npm run build
+Déploiement :
+
+
+netlify deploy
+
+
+
+
+
+
 
 ├── public
 │   └── index.html
