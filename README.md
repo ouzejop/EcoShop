@@ -351,4 +351,4 @@ Documentation React
 Documentation React Router
 Font Awesome - Pour les icônes.
 
-lien du portefolio : https://ousmandiop.netlify.app
+lien du portefolio :https://ouzejop.github.io/portefolio/index.html
